@@ -5,9 +5,10 @@
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+ <script src="ticket.js"></script>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Times New Roman', Times, serif, sans-serif;
             margin: 0;
             padding: 0;
             background-color: rgb(15, 24, 60);
@@ -43,24 +44,18 @@
             margin-top: 5px;
         }
         .navbar-brand {
-            background-color:rgb(198, 181, 181) ;
-            border-radius: 7px;
             font-family: 'Times New Roman', Times, serif;
             font-size: x-large;
             letter-spacing: 1.5px;
-            word-wrap: break-word;
             padding-left: 3%;
-            width: 300px;
-            height: 60px;
-            line-height: 50px;
-            box-shadow: 10px -8px 0 rgba(0, 0, 0, 0.1) inset;
-            transition: all .2s ease-in-out;
+          
             }
             h2 {
-                color: white;
+                color: rgb(189, 22, 22);
                 font-family: 'Times New Roman', Times, serif;
                 padding-left: 5%;
-                padding-top: 5%;
+                padding-top: 6%;
+                font-size: large;
 
             }
 
@@ -90,8 +85,98 @@
                 padding-left: 5%;
                 margin-left: 0;
             }
+            
+           subject {
+            color: white;
+           }
+           h4 {
+            color: white;
+            font-family: 'Times New Roman', Times, serif;
+            padding-left: 5%;
+           }
+           label {
+            color: white;
+            font-family: 'Times New Roman', Times, serif;
+            padding-left: 5%;
+           }
+           input[type="text"] {
+            width: 30%;
+            padding-right: 1%;
+            border-color: rgb(189, 22, 22);
+            align-items: left;
+            align-content: left;
+            text-align: left;
+            margin-left: auto;
+            display: inline-block;
+            height: 30px;
+            background-position: center;
+            background-repeat: no-repeat;
+            box-shadow: none;
+            outline: none;
+            transition: all 0.2s ease-in-out;
+            -webkit-transition: all 0.2s ease-in-out;
+            cursor: pointer;
+            }
+            input[type=text] ,input[type=password]{
+            width : 35%;
+            height : auto;
+            padding-left: 10px;
+            box-sizing : border-box;
+            border : 2.5px solid rgb(189, 22, 22);
+            -webkit-transition : all 0.30s ease-in-out;
+            transition : all 0.30s ease-in-out;
+        }
+    
+        textarea {
+            border-color:rgb(189, 22, 22);
+            width: 30%;
+            align-items: left;
+            align-content: left;
+            text-align: leftt;
+            padding-left: 1%;
+            margin-left: auto;
+            display: inline-block;
+            height: 70px;
+            background-position: center bottom;
+            background-repeat: no-repeat;
+            background-image: url("../images/textarea.png");
+            box-shadow: none;
+            outline: none;
+            transition: all 0.2s ease-in-out;
+            -webkit-transition: all 0.2s ease-in-out;
+            cursor: pointer;
+            }
+            
+            input[type="submit"] {
+                top: 40px;
+                right: 60px;
+                float: left;
+                z-index: 1;
+                border:none;
+                color:#fff;
+                font-size: 1em;
+                padding: 20px, 5px;
+                margin:auto;
+                background-color: rgb(189, 22, 22);
+                border-radius: 5px;
+                cursor:pointer;
+                user-select: none;
+                transition: all 0.2s ease-in-out;
+                -webkit-transition: all 0.2s ease-in-out;
+                }
+            
+            
+           h3 {
+            font-family: 'Times New Roman', Times, serif;
+            color: white;
+            font-size: large;
+            padding-left: 5%;
+            padding-top: 2%;
+           }
+
         
     </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact</title>
@@ -120,10 +205,16 @@
            </ul>
         </div>
        </nav>
-    <h1>Contact & Help</h1>
+    <h1>Contact & FAQ</h1>
     <p>If you have a medical emergency, please dial 911.</p>
-        <h6>Please leave your name, email, and your questions or concerns below.<br>
-            We will try to get back with you as soon as possible.</h6>
+    <h4>Need to reach us?</h4>
+
+    <h3>Phone: 1(800)345-4567</h3>
+    <h3>Email: info@jmedcheckin.com</h3>
+    <h3>Address: 123 Happy Rd, Troy Al</h3>
+
+                
+            
             <h2>FAQ</h2>
             <div class="container">
                 <div class="faq-item">

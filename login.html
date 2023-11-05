@@ -5,6 +5,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+    
     <meta charset="UTF-8">
     <title>Healthcare Sign-In Sheet</title>
     <style>
@@ -13,38 +15,31 @@
         }
         
         .navbar-brand {
-            background-color:rgb(198, 181, 181) ;
-            border-radius: 7px;
             font-family: 'Times New Roman', Times, serif;
             font-size: x-large;
             letter-spacing: 1.5px;
-            word-wrap: break-word;
             padding-left: 3%;
-            width: 260px;
-            height: 60px;
-            line-height: 50px;
-            box-shadow: 10px -8px 0 rgba(0, 0, 0, 0.1) inset;
-            transition: all .2s ease-in-out;
+          
             }
         body {
             font-family: 'Times New Roman', Times, serif sans-serif;
-            text-align: left;
+            text-align: center;
         }
         h1 {
             padding-top: 5%;
-            color: rgb(255, 255, 255);
+            color: rgb(186, 24, 24);
             font-family: 'Times New Roman', Times, serif;
             font-size: 25px;
             text-align: center;
         }
         h2 {
-            color: white;
+            color: rgb(255, 255, 255);
             font-family: 'Times New Roman', Times, serif;
             font-size: 20px;
             text-align: center;
         }
         .label {
-            color: white;
+            color: rgb(14, 12, 78);
             font-family: 'Times New Roman', Times, serif;
             font-size: medium;
         }
@@ -56,7 +51,62 @@
             padding: 15px;
             margin: 5px 0;
             border-color: rgb(189, 22, 22);
+            align-items: center;
+            align-content: center;
+            text-align: center;
+            width:fit-content;
         }
+        input {
+            text-align: center;
+            align-items: center;
+        }
+        .centered-dropdown {
+            text-align: center;
+        }
+        
+        .check-in {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            }
+            .checkInForm {
+                color: rgb(255, 255, 255);
+                display: flex;
+                flex-direction: column;
+                max-width: 300px;
+                height: auto;
+                background-color: rgba(0, 0, 0, 0.6);
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+                0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                transition: 0.3s;
+                margin-bottom: 2rem;
+                }
+                .nav-link {
+                    color: rgb(189, 22, 22);
+                    font-family: 'Times New Roman', Times, serif;
+                }
+               script {
+                position: absolute;
+                bottom: -100px;
+                transition: 1sec;
+               }
+
+
+               input[type="text"] {
+                font-family: 'Times New Roman', Times, serif;
+                align-items: center;
+                align-content: center;
+                text-align: center;
+                width:fit-content;
+               }
+
+               input[type="submit"]{
+                color: red;
+                font-family:   'Times New Roman', Times, serif ;
+
+               }
+                
+                
     </style>
 </head>
 <body>
@@ -83,16 +133,15 @@
            </ul>
         </div>
        </nav>
-       
     <div class="container">
         <h1>Sign In Sheet</h1>
         <form id="sign-in-form">
             <h2
             <label for="patientName">Patient Name:</label><br>
-            <input type="text" id="patientName" placeholder="Last Name, First Name" required><br>
+            <input type="text" id="patientName" placeholder="Last, First" required><br>
             <h2>Select a Time Slot</h2>
 
-<select id="timeSlots">
+<select name="timeSlot" id="timeSlot" required>
  <option value="08:00">08:00</option>
  <option value="08:30">08:30</option>
  <option value="09:00">09:00</option>
@@ -112,10 +161,20 @@
  <option value="16:00">16:00</option>
  <option value="16:30">16:30</option>
  <option value="17:00">17:00</option>
+</select>
+</div>
+<form onsubmit="event.preventDefault(); displayMessage();">
+    <input type="text" placeholder="Enter your symptoms"><br>
+    <input type="submit" value="Submit">
+</form>
 
-<input type="submit" id="check-in">
 
-           <!-- <p><img src="Images/jmedical.svg" width="200" height="150"></p>-->
+           <p><img src="Images/jmedical.svg" width="250" height="200"></p>
+           <h2>Are you a new patient?</h2>
+           <button onclick="location.href='register.php'">
+            <a class="nav-link" href="registration.html">Register before logging in!</a>
+          </li></button>
+           </center>
         </form>
     </div>
     </div>
@@ -124,7 +183,7 @@
     </footer>
 
     <script>
-        document.getElementById("sign-in-form").addEventListener("submit", function(event) {
+        document.getElementById("sign-in-sheet").addEventListener("submit", function(event) {
             event.preventDefault();
 
             
@@ -132,10 +191,18 @@
             const appointmentTime = document.getElementById("appointmentTime").value;
 
             
-            document.getElementById("sign-in-form").reset();
+            document.getElementById("sign-in-sheet").reset();
 
             alert(`Patient Name: ${patientName}\nAppointment Time: ${appointmentTime}\nSign-in Successful!`);
         });
+
+        
+function displayMessage() {
+    $('body').append('<div id="alertBox">You\'re checked in!.</div>');
+    $('#alertBox').fadeOut(3000, function() {
+        $(this).remove();
+    });
+}
     </script>
 </body>
 </html>
